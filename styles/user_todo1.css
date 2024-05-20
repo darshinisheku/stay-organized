@@ -1,0 +1,36 @@
+#accordion {
+    width: 100%;
+  }
+  
+  .accordionItem {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid red;
+  }
+  
+  .accordion-header {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 10px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-left: auto;
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+  }
+  
+  .open .icon {
+    transform: rotate(0);
+  }
+  
