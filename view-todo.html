@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users Todo</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/user_todo1.css">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" 
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/bootstrap-icons.js"></script>
+    <script src="/scripts/view_todo.js" defer></script>
+    <style>
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+    
+    #snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+#placeholderDiv{
+  min-height: 15rem;
+          border: 1px solid grey;
+          margin: 1rem;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          background: aliceblue;
+          font-style: italic;
+          color: grey;
+}
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+        <header style="border:solid;">
+            <nav class="navbar navbar-light" style="background-color: aliceblue;">
+                <a class="navbar-brand" href="#" style="padding-left: 30px;">
+                    <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+                   <h4>Stay Organized</h4> 
+                  </a>
+                <ul class="nav justify-content-end" style="margin-right: 30px;">
+                    <li class="nav-item">   
+                      <a class="nav-link active" href="/index.html" style="color: black;">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/newTodoForm.html" style="color: black;">ADD-TODO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/view-todo.html" style="color: black;">VIEW-TODO</a>
+                    </li>
+                    <li class="nav-item">   
+                      <a class="btn btn-primary" href="/newUser.html" style="color: black;">Register</a>
+                    </li>
+                  </ul>
+            </nav>
+            
+        </header>
+
+        <div id="firstDiv">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div style="">
+                            <div id="headings">
+                                <h1>Organize all aspects</h1>
+                                <h1>of your life</h1>
+                            </div>
+                            <div id="subtitle" style="padding-top: 30px;">
+                                <p>
+                                    <font size="4px">Get to-dos out of your mind, and get them done in less time.</font>
+                                </p>
+                            </div>
+                            <div class="row mb-4">
+                                <select id="dropdownMenuButton" class="form-select" aria-label="Default select example"
+                                    onchange="getUserDetails()" style="width: 50%;">
+                                    <option disabled selected>Select User</option>
+                                </select>
+                                <div class="col offset-lg-4 col-lg-2" id="buttonDiv">
+                                    <!-- <button type="button" class="btn btn-danger">
+                                        To Do <span class="badge bg-danger">4</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success">
+                                        Done <span class="badge bg-success">2</span>
+                                    </button> -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div id="secDiv">
+
+              <table id="userTodoTable">
+                  <tr>
+                    <th >UID</th>
+                    <th >Description</th>
+                    <th >Deadline</th>
+                    <th >See Details</th>
+                  </tr>
+                </table>
+
+            </div> -->
+        <div id="detailedDiv" style="margin-bottom: 2rem;">
+          <div id="placeholderDiv" style="">
+          Kindly select user to see list of tasks.  
+        </div>
+            
+
+
+        </div>
+
+        <div>
+            <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 10px;">
+    
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="successToast" data-autohide="true" style="position: absolute; top: 0; right: 0;">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Success</strong>
+                      <small>1 sec ago</small>
+                      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="toast-body">
+                      Hello!! todo updated successfully.
+                    </div>
+                  </div>
+            </div>
+
+            <div class="toast fixed-bottom m-5 ms-auto" role="alert" aria-live="assertive" aria-atomic="true" id="failedtoast" data-autohide="false">
+                <div class="toast-header">
+                  <strong class="mr-auto">Failed</strong>
+                  <small>1 sec ago</small>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="toast-body">
+                  Hello, There! Unable to update todo!.
+                </div>
+              </div>
+        </div>
+
+        
+
+        <!-- <div class="modal" id="myModal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Delete TODO</h5>
+                    <button type="button" class="close" data-dismiss="modal" id="closeModalBtn" aria-label="Close" onclick="closeBtn()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are You sure you want to delete this TODO ?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="deleteUserTodo()">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DELETE TODO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are You sure you want to delete this TODO ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar">Some text some message..</div>
+
+
+    <footer class="py-5" style="background-color: aliceblue">
+      <div class="row">
+          <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+              <h5>Home</h5>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Features</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Pricing</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+              </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+              <h5>Learn and Get Help</h5>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Learn and Get Help</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Support</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">University</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Blog</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">E-Book</a></li>
+              </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+              <h5>Company</h5>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Company</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Careers</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">SiteMap</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Privacy policy</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3" style="padding-right: 80px;">
+              <form>
+                  <h5>Subscribe to our newsletter</h5>
+                  <p>Monthly digest of what's new and exciting from us.</p>
+                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                      <label for="newsletter1" class="visually-hidden">Email address</label>
+                      <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                      <button class="btn btn-primary" type="button">Subscribe</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+          style="padding-left: 80px;">
+          <p>© 2024 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                          <use xlink:href="#twitter"></use>
+                      </svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                          <use xlink:href="#instagram"></use>
+                      </svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                          <use xlink:href="#facebook"></use>
+                      </svg></a></li>
+          </ul>
+      </div>
+  </footer>
+
+    </div>
+
+</body>
+
+</html>

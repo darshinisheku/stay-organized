@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" href="/styles/index.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    </head>
-    <body>
-        <div id="main">
-        <header style="background-color: aqua;border:solid;">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <a class="navbar-brand" href="#">
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/bootstrap-icons.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+        <header style="border:solid;">
+            <nav class="navbar navbar-light" style="background-color: aliceblue;">
+                <a class="navbar-brand" href="#" style="padding-left: 30px;">
                     <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-                    Stay Organized
-                  </a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">   
-                      <a class="nav-link active" href="#">HOME</a>
+                    <h4>Stay Organized</h4>
+                </a>
+                <ul class="nav justify-content-end" style="margin-right: 30px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color: black;"></i>HOME</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">ADD-TODO</a>
+                        <a class="nav-link" href="/newTodoForm.html" style="color: black;">ADD-TODO</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/users-todo.html">VIEW-TODO</a>
+                        <a class="nav-link" href="/view-todo.html" style="color: black;">VIEW-TODO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link href="#">LOGIN</a>
+                        <!-- <button type="button" class="btn btn-primary btn-lg" >Register</button> -->
+                        <a class="btn btn-primary" href="/newUser.html" style="color: black;">Register</a>
                     </li>
-                    <li class="nav-item">   
-                        <button type="button" class="btn btn-outline-dark">SIGN UP</button>
-                    </li>
-                  </ul>
+                </ul>
             </nav>
-            
+
         </header>
         <div id="firstDiv">
             <div class="container">
@@ -40,151 +43,64 @@
                         <div class="intro" style="padding-top: 120px;padding-bottom: 120px;">
                             <div class="headings">
 
-                                <h1 style="font-size: 60px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Stay Organized</h1>
-                                <h1 style="font-size: 60px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Stay Creative</h1>
+                                <h1
+                                    style="font-size: 60px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    Stay Organized</h1>
+                                <h1
+                                    style="font-size: 60px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    Stay Creative</h1>
 
                             </div>
                             <div class="sub" style="margin-top: 60px;">
                                 <p class="subtitle">
-                                    <font size="5px">Join millions of people to capture ideas, organize life, and do something creative everyday.</font>
-                                    
-                                 </p>
+                                    <font size="5px">Join us to capture ideas, organize life, and do something creative
+                                        everyday.</font>
+
+                                </p>
                             </div>
                             <div class="btns" style="margin-top: 30px;">
-                                <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+                                <a href="/newUser.html">
+                                    <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+                                </a>
                             </div>
-                            
-                            
+
+
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div  style="box-sizing:border-box;display:block;max-width:100%;padding-top: 120px;">
-                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt="" aria-hidden="true" src="/images/homePage/header.png">
-    
+                        <div style="box-sizing:border-box;display:block;max-width:100%;padding-top: 120px;">
+                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt=""
+                                aria-hidden="true" src="/images/homePage/header.png">
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-            <div id="secondDiv">
-                <div class="container">
-                    <div class="row" style="background-color:#f7f8f8;">
-                        <div class="col-lg-6">
-                            <div  style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
-                                <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt="" aria-hidden="true" src="/images/homePage/pic2.png">
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <div style="padding-top: 220px;">
-                                <div id="headings">
-                                    <h1>Organize everything in life</h1>
-                                </div>
-                                <div id="subtitle" style="padding-top: 30px;">
-                                    <p><font size="4px">Whether there is a work-related task or a personal goal, TickTick is here to help you manage all your to-dos.</font></p>
-                                </div>
-                            </div>
-                            
-                            
+        <div id="secondDiv">
+            <div class="container">
+                <div class="row" style="background-color:#f7f8f8;">
+                    <div class="col-lg-6">
+                        <div style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
+                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt=""
+                                aria-hidden="true" src="/images/homePage/pic2.png">
                         </div>
 
                     </div>
-
-                </div>
-
-            </div>
-
-            <div id="thirdDiv">
-                <div class="container">
-                    <div class="row" >
-                       
-                        <div class="col-lg-6">
-                            <div style="padding-top: 220px;">
-                                <div id="headings">
-                                    <h1>Get reminded anytime,</h1>
-                                    <h1>anywhere</h1>
-
-                                </div>
-                                <div id="subtitle" style="padding-top: 30px;">
-                                    <p><font size="4px">Set a reminder to ease your mind off worrying about missing deadlines from now on.</font></p>
-                                </div>
+                    <div class="col-lg-6">
+                        <div style="padding-top: 220px;">
+                            <div id="headings">
+                                <h1>Organize everything in life</h1>
                             </div>
-                            
-                            
-                        </div>
-                        <div class="col-lg-6">
-                            <div  style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
-                                <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt="" aria-hidden="true" src="/images/homePage/calander.png">
+                            <div id="subtitle" style="padding-top: 30px;">
+                                <p>
+                                    <font size="4px">Whether there is a work-related task or a personal goal, TickTick
+                                        is here to help you manage all your to-dos.</font>
+                                </p>
                             </div>
-
                         </div>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div id="fourthDiv">
-                <div class="container">
-                    <div class="row" style="background-color:#f7f8f8;">
-
-                        <div class="col-lg-6">
-                            <div  style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
-                                <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt="" aria-hidden="true" src="/images/homePage/flexcalender.png">
-                            </div>
-
-                        </div>
-                       
-                        <div class="col-lg-6">
-                            <div style="padding-top: 220px;">
-                                <div id="headings">
-                                    <h1>Flexible calendar views</h1>
-
-                                </div>
-                                <div id="subtitle" style="padding-top: 30px;">
-                                    <p><font size="4px">With five different calendar views, you can check and handle your schedules in a more convenient way.</font></p>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                      
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="fourthDiv">
-                <div class="container">
-                    <div class="row">
-
-                       
-                         <div class="col-lg-6">
-                            <div style="padding-top: 220px;">
-                                <div id="headings">
-                                    <h1>Collaborating with others</h1>
-
-                                </div>
-                                <div id="subtitle" style="padding-top: 30px;">From family weekend plan to teamwork, share lists and assign tasks on the go. 
-                                    Stay productive together!With five different calendar views, you can check and handle your schedules in a more convenient way.</font></p>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div  style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
-                                <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt="" aria-hidden="true" src="/images/homePage/collab.png">
-                            </div>
-
-                        </div>
-                      
 
                     </div>
 
@@ -193,65 +109,183 @@
             </div>
 
         </div>
-        <footer class="py-5" style="background-color: #f7f8f8;">
-            <div class="row">
-              <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-        
-              <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-        
-              <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-              </div>
-        
-              <div class="col-md-5 offset-md-1 mb-3" style="padding-right: 80px;">
-                <form>
-                  <h5>Subscribe to our newsletter</h5>
-                  <p>Monthly digest of what's new and exciting from us.</p>
-                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                    <label for="newsletter1" class="visually-hidden">Email address</label>
-                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                    <button class="btn btn-primary" type="button">Subscribe</button>
-                  </div>
-                </form>
-              </div>
+
+        <div id="thirdDiv">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div style="padding-top: 220px;">
+                            <div id="headings">
+                                <h1>Get reminded anytime,</h1>
+                                <h1>anywhere</h1>
+
+                            </div>
+                            <div id="subtitle" style="padding-top: 30px;">
+                                <p>
+                                    <font size="4px">Set a reminder to ease your mind off worrying about missing
+                                        deadlines from now on.</font>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
+                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt=""
+                                aria-hidden="true" src="/images/homePage/calander.png">
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="padding-left: 80px;">
-              <p>© 2024 Company, Inc. All rights reserved.</p>
-              <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-              </ul>
+
+        </div>
+
+
+        <div id="fourthDiv">
+            <div class="container">
+                <div class="row" style="background-color:#f7f8f8;">
+
+                    <div class="col-lg-6">
+                        <div style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
+                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt=""
+                                aria-hidden="true" src="/images/homePage/flexcalender.png">
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="padding-top: 220px;">
+                            <div id="headings">
+                                <h1>Flexible calendar views</h1>
+
+                            </div>
+                            <div id="subtitle" style="padding-top: 30px;">
+                                <p>
+                                    <font size="4px">With five different calendar views, you can check and handle your
+                                        schedules in a more convenient way.</font>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
             </div>
-          </footer>
-        
+
+        </div>
+
+        <div id="fourthDiv">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-lg-6">
+                        <div style="padding-top: 220px;">
+                            <div id="headings">
+                                <h1>Collaborating with others</h1>
+
+                            </div>
+                            <div id="subtitle" style="padding-top: 30px;">From family weekend plan to teamwork, share
+                                lists and assign tasks on the go.
+                                Stay productive together!With five different calendar views, you can check and handle
+                                your schedules in a more convenient way.</font>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div style="box-sizing:border-box;display:block;max-width:100%;padding-top: 40px;">
+                            <img style="max-width:100%;display:block;margin:0;border:none;padding:0" alt=""
+                                aria-hidden="true" src="/images/homePage/collab.png">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-    </body>
-</html>
+    <footer class="py-5" style="background-color: aliceblue">
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+                <h5>Home</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+                </ul>
+            </div>
 
+            <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+                <h5>Learn and Get Help</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Learn and Get Help</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Support</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">University</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Blog</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">E-Book</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
+                <h5>Company</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Company</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Careers</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">SiteMap</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Privacy policy</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-5 offset-md-1 mb-3" style="padding-right: 80px;">
+                <form>
+                    <h5>Subscribe to our newsletter</h5>
+                    <p>Monthly digest of what's new and exciting from us.</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+            style="padding-left: 80px;">
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    </div>
+</body>
+
+</html>

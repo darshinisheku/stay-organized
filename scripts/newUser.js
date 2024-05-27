@@ -1,9 +1,25 @@
+var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+var toastList = toastElList.map(function (toastEl) {
+  return new bootstrap.Toast(toastEl)
+})
+const togglePassword = document.querySelector("#toggleIcon");
+const password = document.getElementById("pass");
+
+togglePassword.addEventListener("click", function(e) {
+    // toggle the type attribute
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    
+    // toggle the icon
+    this.classList.toggle("bi-eye");
+});
 function validate_password() {
  
     let pass = document.getElementById('pass').value;
     let confirm_pass = document.getElementById('confirm_pass').value;
     if (pass != confirm_pass) {
         document.getElementById('wrong_pass_alert').style.color = 'red';
+        document.getElementById('wrong_pass_alert').style.marginBottom = '2rem';
         document.getElementById('wrong_pass_alert').innerHTML
             = 'Use same password';
         document.getElementById('create').disabled = true;
@@ -92,12 +108,36 @@ function debounce(func, timeout = 300){
         document.getElementById('userNameStatus').style.color = 'green';
         document.getElementById('userNameStatus').innerHTML =
             'User Name Available';
+        document.getElementById('create').disabled = false;
 
     }else{
         document.getElementById('userNameStatus').style.color = 'red';
         document.getElementById('userNameStatus').innerHTML =
             'User Name UnAvailable';
+        document.getElementById('create').disabled = true;
     }
   }
 
   const progressChange = debounce(() => ValidateUserName());
+
+  function formReset(){
+    let form = document.getElementById("form");
+    form.reset();
+    document.getElementById("userNameStatus").innerHTML = ""
+    document.getElementById('wrong_pass_alert').innerHTML=""
+  }
+
+//   function togglePasswordVisibility() {
+//     var passwordField = document.getElementById("pass");
+//     var toggleIcon = document.getElementById("toggleIcon");
+
+//     if (passwordField.type === "password") {
+//         passwordField.type = "text";
+//         toggleIcon.classList.remove("bi-eye");
+//         toggleIcon.classList.add("bi-eye-slash");
+//     } else {
+//         passwordField.type = "password";
+//         toggleIcon.classList.remove("bi-eye-slash");
+//         toggleIcon.classList.add("bi-eye");
+//     }
+// }

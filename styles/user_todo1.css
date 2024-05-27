@@ -1,12 +1,27 @@
-#accordion {
-    width: 100%;
+/* #accordion {
+    width: 75%;
+  } */
+
+  /* body{
+    display :flex;
+    align-items: center;
+    min-height: 100vh;
+   // justify-content: center;
+   // background-color: #E3F2FD;
+  } */
+
+  .accordion {
+
+    /* max-width: 750px; */
+    width : 100%;
   }
+
   
   .accordionItem {
     background-color: #fff;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
   .accordion-header {
@@ -16,11 +31,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #d8edee;
   }
   
-  .accordion-content {
+  .accordion-collapse {
     display: none;
     padding: 10px;
+    column-count: 2; /* Set the number of columns */
+    column-gap: 20px; /* Adjust the gap between columns */
   }
   
   .icon {
@@ -33,4 +51,49 @@
   .open .icon {
     transform: rotate(0);
   }
+
+  .column {
+    break-inside: avoid; /* Prevent content from breaking across columns */
+  }
+
+  .span-0 {
+    width: 200px;
+  }
+
+  .span-1 {
+      margin-left: 100px;
+      width: 200px;
+  }
+
+  /* .span-2 {
+    margin-left: 100px;
+    width: 200px;
+} */
+
+
+[class*="badge"] {
+  /* margin-left: 75px;
+  margin-right: 100px;
+  width: 75px; */
+}
+
+[class*="danger"] {
+  --bs-badge-color : red !important;
+}
+
+[class*="warning"] {
+  --bs-badge-color: orange !important;
+}
+s
+[class*="info"] {
+  --bs-badge-color: green !important;
+}
+
+.bi bi-x{
+
+  color: red;
+  font-size: 40px;
+  margin-left: 100px;
+
+}
   

@@ -8,3 +8,23 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
+  form i {
+    margin-left: 580px;
+    cursor: pointer;
+}
+
+  /* .password-toggle-container {
+    position: relative;
+} 
+
+.password-toggle-container input[type="password"] {
+    padding-right: 30px; 
+}
+
+.password-toggle-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateX(-2%);
+    cursor: pointer;
+} */

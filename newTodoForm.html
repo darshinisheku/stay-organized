@@ -11,36 +11,33 @@
     <body>
         <div id="main">
 
-            <header style="background-color: aqua;border:solid;">
-                <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                    <a class="navbar-brand" href="#">
-                        <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-                        Stay Organized
-                      </a>
-                    <ul class="nav justify-content-end">
-                        <li class="nav-item">   
-                          <a class="nav-link active" href="#">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">ADD-TODO</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/users-todo.html">VIEW-TODO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link href="#">LOGIN</a>
-                        </li>
-                        <li class="nav-item">   
-                            <button type="button" class="btn btn-outline-dark">SIGN UP</button>
-                        </li>
-                      </ul>
-                </nav>
-                
-            </header>
+          <header style="border:solid;">
+            <nav class="navbar navbar-light" style="background-color: aliceblue;">
+                <a class="navbar-brand" href="#" style="padding-left: 30px;">
+                    <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+                   <h4>Stay Organized</h4> 
+                  </a>
+                <ul class="nav justify-content-end" style="margin-right: 30px;">
+                    <li class="nav-item">   
+                      <a class="nav-link active" href="/index.html" style="color: black;">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/newTodoForm.html" style="color: black;">ADD-TODO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/view-todo.html" style="color: black;">VIEW-TODO</a>
+                    </li>
+                    <li class="nav-item">   
+                      <a class="btn btn-primary" href="/newUser.html" style="color: black;">Register</a>
+                    </li>
+                  </ul>
+            </nav>
+            
+        </header>
 
             <div id="secondDiv" style="display: flex; justify-content: center; padding-top: 40px;" >
 
-                <h4>Complete this to do list form with the tasks you want to submit to the Team.</h4>
+                <h2>Add New Task</h2>
 
             </div>
 
@@ -50,58 +47,54 @@
                     <div class = "row">
 
                         <div class="col-lg-2"></div>
-                        <div class="col-lg-8">
+                        <div class="col-lg-8" style="border: 1px solid black;
+                        border-radius: 5px;
+                        padding: 30px;
+                        background: aliceblue;">
 
-                            <form onsubmit="event.preventDefault();postnewTodo();">
+                            <form id="taskForm" onsubmit="event.preventDefault();postnewTodo();">
                                
                                 <div class="mb-3">
-                                    <label class="form-label" for="userId">User Name :</label>
-                                    <select id="dropdownMenuButton" class="form-control" name="userId"></select>
+                                    <label class="form-label" for="userId"><strong>Name :</strong> </label>
+                                    <select id="dropdownMenuButton" class="form-control" name="userId" required>
+                                      <option disabled selected value=""> Select User</option>
+                                    </select>
+                                   
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" for="Select-Category">Select Category</label>
-                                    <select id="dropdownMenuButtonCategory" class="form-control" name="Select-Category"></select>
+                                    <label class="form-label" for="Select-Category"><strong>Select Category :</strong></label>
+                                    <select id="dropdownMenuButtonCategory" class="form-control" name="Select-Category">
+                                      <option disabled selected value="">Select Category</option>
+                                    </select>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" for="description">Description :</label>
-                                    <textarea id="description" name="description"  class="form-control" rows="4" cols="50" >
-                                    </textarea>
+                                    <label class="form-label" for="description"><strong> Description :</strong></label>
+                                    <textarea id="description" name="description" value="data"  class="form-control" rows="4" cols="50" required></textarea>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" for="deadline">DeadLine :</label>
-                                    <input class="form-control" type="date" id="deadline" name="deadline">
+                                    <label class="form-label" for="deadline"><strong>DeadLine :</strong></label>
+                                    <input class="form-control" type="date" id="deadline" name="deadline" required>
                                 </div>
                                
                                 <div class="mb-3">
-                                    <label class="form-label" for="inlineRadioOptions">Priority :</label><br>
+                                    <label class="form-label" for="inlineRadioOptions"><strong>Priority :</strong></label><br>
                                 
-                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="priority">
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="priority" required>
                                        <option selected>Select Priority</option>
-                                       <option value="high">High</option>
-                                       <option value="medium">Medium</option>
-                                       <option value="low">Low</option>
+                                       <option value="High">High</option>
+                                       <option value="Medium">Medium</option>
+                                       <option value="Low">Low</option>
                                      </select>
                                 </div>
 
-                                <!-- <label for="Completed">Task Completed?</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="completed" id="completed" value="true">
-                                    <label class="form-check-label" for="completed">
-                                      Completed
-                                    </label>
-                                  </div>
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="completed" id="notCompleted" value="false">
-                                    <label class="form-check-label" for="completed">
-                                      Not Completed
-                                    </label>
-                                  </div> -->
 
                                   <div>
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button id="reset-button" type="button" class="btn btn-secondary" onclick="formReset()">Reset</button>
+
                                   </div>
                                
 
@@ -137,64 +130,70 @@
             </div>
 
 
-            <footer class="py-5" style="background-color: #f7f8f8;">
-                <div class="row">
+            <footer class="py-5" style="background-color: aliceblue;margin-top: 50px;">
+              <div class="row">
                   <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
+                      <h5>Home</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Home</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Features</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Pricing</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">FAQs</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+                      </ul>
                   </div>
-            
+      
                   <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
+                      <h5>Learn and Get Help</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Learn and Get Help</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Support</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">University</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Blog</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">E-Book</a></li>
+                      </ul>
                   </div>
-            
+      
                   <div class="col-6 col-md-2 mb-3" style="padding-left: 80px;">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
+                      <h5>Company</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Company</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">About</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Careers</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">SiteMap</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color: black;">Privacy policy</a></li>
+                      </ul>
                   </div>
-            
+      
                   <div class="col-md-5 offset-md-1 mb-3" style="padding-right: 80px;">
-                    <form>
-                      <h5>Subscribe to our newsletter</h5>
-                      <p>Monthly digest of what's new and exciting from us.</p>
-                      <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                      </div>
-                    </form>
+                      <form>
+                          <h5>Subscribe to our newsletter</h5>
+                          <p>Monthly digest of what's new and exciting from us.</p>
+                          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                              <label for="newsletter1" class="visually-hidden">Email address</label>
+                              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                              <button class="btn btn-primary" type="button">Subscribe</button>
+                          </div>
+                      </form>
                   </div>
-                </div>
-            
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="padding-left: 80px;">
+              </div>
+      
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+                  style="padding-left: 80px;">
                   <p>© 2024 Company, Inc. All rights reserved.</p>
                   <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#twitter"></use>
+                              </svg></a></li>
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#instagram"></use>
+                              </svg></a></li>
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#facebook"></use>
+                              </svg></a></li>
                   </ul>
-                </div>
-              </footer>
-
+              </div>
+          </footer>
         </div>
     </body>
     
